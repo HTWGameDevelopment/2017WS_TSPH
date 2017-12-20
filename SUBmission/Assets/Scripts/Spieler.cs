@@ -5,12 +5,18 @@ using UnityEngine;
 public class Spieler : MonoBehaviour {
 
 
+	public GameObject[] geschoss = new GameObject[3];
+
+
+
+
+
 	// Use this for initialization
 	void Start () {
 		
 	}
 	float eingabeFaktor = 8;
-	public GameObject[] geschoss = new GameObject[3];
+
 
 	//  Update is called once per frame
 	void Update () {
@@ -45,7 +51,15 @@ public class Spieler : MonoBehaviour {
 			xNeu =q.x-1.5f;
 		}
 
-
+		if (Input.GetButtonDown ("Fire1")) {
+			for (int i = 0; i < 3; i++) {
+				if (!geschoss [i].activeSelf) {
+					geschoss [i].transform.position = new Vector3 (this.transform.position.x + 2f, this.transform.position.y, 0);
+					geschoss [i].SetActive (true);
+					break;
+				}
+			}
+		}
 
 		transform.position = new Vector2 (xNeu, yNeu);
 	}
