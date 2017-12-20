@@ -138,7 +138,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 35166110}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7, y: 4, z: 1}
+  m_LocalPosition: {x: 7, y: 4, z: 11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 233401006}
@@ -163,6 +163,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 1002799604}
+  Max_Hp: 100
+  current_Hp: 0
 --- !u!114 &35166113
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1066,8 +1068,6 @@ MonoBehaviour:
   - {fileID: 204808117}
   - {fileID: 929900546}
   - {fileID: 1996507499}
-  Max_Hp: 100
-  current_Hp: 0
 --- !u!50 &1919058962
 Rigidbody2D:
   serializedVersion: 4
