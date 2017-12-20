@@ -6,14 +6,15 @@ public class Spieler : MonoBehaviour {
 
 
 	public float Max_Hp = 100f;
-	public float current_Hp = 0f;
-
+	public float Current_Hp = 0f;
+	public int Coins = 0;
 	// Use this for initialization
 	void Start () {
-		current_Hp = Max_Hp;
+		Current_Hp = Max_Hp;
 	}
 	float eingabeFaktor = 8;
 	public GameObject[] geschoss = new GameObject[3];
+
 
 	//  Update is called once per frame
 	void Update () {
@@ -40,7 +41,8 @@ public class Spieler : MonoBehaviour {
 		Vector3 p = Camera.main.ScreenToWorldPoint (new Vector3 (0, 0, 0));
 		Vector3 q = Camera.main.ScreenToWorldPoint (new Vector3 (Screen.width, 0, 0));
 
-		if (xNeu < p.x + 1.5f){
+		if (xNeu < p.x + -1.5f){
+			Current_Hp = 0f;
 			xNeu =p.x+1.5f;
 		}
 
@@ -62,4 +64,23 @@ public class Spieler : MonoBehaviour {
 
 		transform.position = new Vector2 (xNeu, yNeu);
 	}
+
+
+	void OnTriggerEnter2D(Collider2D coll)
+	{
+		
+
+	    if (coll.gameObject.tag == "Environment")
+		{
+			transform.position =  Camera.main.ScreenToWorldPoint (new Vector3 (400,300, 0));
+			HealthChange(10);
+		}
+
+	}
+
+
+	void HealthChange(int schaden){
+		Current_Hp = Current_Hp-schaden;
+	}
+
 }

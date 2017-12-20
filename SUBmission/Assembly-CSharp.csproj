@@ -52,8 +52,12 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\CameraController.cs" />
+     <Compile Include="Assets\Scripts\CoinDisplay.cs" />
      <Compile Include="Assets\Scripts\Geschoss.cs" />
+     <Compile Include="Assets\Scripts\GeschossZähler.cs" />
      <Compile Include="Assets\Scripts\HealthBar.cs" />
+     <Compile Include="Assets\Scripts\Pickup.cs" />
+     <Compile Include="Assets\Scripts\Spawner.cs" />
      <Compile Include="Assets\Scripts\Spieler.cs" />
  <Reference Include="Facebook.Unity.Settings">
  <HintPath>C:/Users/schol/Documents/UnityProjects/SUBmission/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
