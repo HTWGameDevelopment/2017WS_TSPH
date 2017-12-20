@@ -5,9 +5,12 @@ using UnityEngine;
 public class Spieler : MonoBehaviour {
 
 
+	public float Max_Hp = 100f;
+	public float current_Hp = 0f;
+
 	// Use this for initialization
 	void Start () {
-		
+		current_Hp = Max_Hp;
 	}
 	float eingabeFaktor = 8;
 	public GameObject[] geschoss = new GameObject[3];
@@ -15,7 +18,7 @@ public class Spieler : MonoBehaviour {
 	//  Update is called once per frame
 	void Update () {
 
-	
+
 
 		//Eingabe speichern
 		float xEingabe = Input.GetAxis ("Horizontal");
@@ -43,6 +46,16 @@ public class Spieler : MonoBehaviour {
 
 		if (xNeu > q.x-1.5f){
 			xNeu =q.x-1.5f;
+		}
+
+		if (Input.GetButtonDown ("Fire1")) {
+			for (int i = 0; i < 3; i++) {
+				if (!geschoss [i].activeSelf) {
+					geschoss [i].transform.position = new Vector3 (this.transform.position.x + 2f, this.transform.position.y, 0);
+					geschoss [i].SetActive (true);
+					break;
+				}
+			}
 		}
 
 
