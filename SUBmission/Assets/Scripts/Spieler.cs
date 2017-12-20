@@ -6,14 +6,15 @@ public class Spieler : MonoBehaviour {
 
 
 	public GameObject[] geschoss = new GameObject[3];
-
+	public float Max_Hp = 100f;
+	public float current_Hp = 0f;
 
 
 
 
 	// Use this for initialization
 	void Start () {
-		
+		current_Hp = Max_Hp;
 	}
 	float eingabeFaktor = 8;
 
@@ -63,4 +64,6 @@ public class Spieler : MonoBehaviour {
 
 		transform.position = new Vector2 (xNeu, yNeu);
 	}
+
+
 }
