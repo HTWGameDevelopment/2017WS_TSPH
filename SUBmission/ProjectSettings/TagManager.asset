@@ -7,6 +7,8 @@ TagManager:
   - Environment
   - HpUp
   - Coin
+  - Enemy
+  - Geschoss
   layers:
   - Default
   - TransparentFX

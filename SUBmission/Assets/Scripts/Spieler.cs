@@ -8,12 +8,15 @@ public class Spieler : MonoBehaviour {
 	public float Max_Hp = 100f;
 	public float Current_Hp = 0f;
 	public int Coins = 0;
+    public float Geschoss_Dmg=10f;
+    public int MaxGeschossCount = 3;
+    public int GeschossCount = 0;
 	// Use this for initialization
 	void Start () {
 		Current_Hp = Max_Hp;
 	}
 	float eingabeFaktor = 8;
-	public GameObject[] geschoss = new GameObject[3];
+    public GameObject[] projectil;
 
 
 	//  Update is called once per frame
@@ -51,14 +54,19 @@ public class Spieler : MonoBehaviour {
 		}
 
 		if (Input.GetButtonDown ("Fire1")) {
-			for (int i = 0; i < 3; i++) {
+            /*for (int i = 0; i < 3; i++) {
 				if (!geschoss [i].activeSelf) {
 					geschoss [i].transform.position = new Vector3 (this.transform.position.x + 2f, this.transform.position.y, 0);
 					geschoss [i].SetActive (true);
 					break;
 				}
-			}
-		}
+			}*/
+            if (GeschossCount < MaxGeschossCount)
+            {
+                Instantiate(projectil[0], new Vector3(this.transform.position.x + 2f, this.transform.position.y, 0), new Quaternion(0, 0, 0, 0));
+                GeschossCount++;
+            }
+            }
 
 
 
@@ -72,15 +80,23 @@ public class Spieler : MonoBehaviour {
 
 	    if (coll.gameObject.tag == "Environment")
 		{
-			transform.position =  Camera.main.ScreenToWorldPoint (new Vector3 (400,300, 0));
-			HealthChange(10);
+            resetPlayer();
+            HealthChange(10);
 		}
+        if (coll.gameObject.tag == "Enemy" && coll.gameObject.name != "Harpune")
+        {
+            resetPlayer();
+        }
 
-	}
+    }
 
 
 	void HealthChange(int schaden){
 		Current_Hp = Current_Hp-schaden;
 	}
+    void resetPlayer()
+    {
+        transform.position = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width / 4, Screen.height / 2, 0));
+    }
 
 }

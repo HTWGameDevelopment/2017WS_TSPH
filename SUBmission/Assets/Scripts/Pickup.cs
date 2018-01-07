@@ -13,14 +13,20 @@ public class Pickup : MonoBehaviour {
 				GameObject.Find("Spieler").GetComponent<Spieler>().Current_Hp += 0.1f * GameObject.Find("Spieler").GetComponent<Spieler>().Max_Hp;
 				if (GameObject.Find("Spieler").GetComponent<Spieler>().Current_Hp > GameObject.Find("Spieler").GetComponent<Spieler>().Max_Hp)
 				{ GameObject.Find("Spieler").GetComponent<Spieler>().Current_Hp = GameObject.Find("Spieler").GetComponent<Spieler>().Max_Hp; }
-				consumable.SetActive(false);
-			}
+                GameObject.Find("Collectibles").GetComponent<ConSpawner>().HpUpCounter--;
+                Destroy(this.gameObject);
+                
+
+
+            }
 			else if (consumable.tag=="Coin")
 			{
 				GameObject.Find("Spieler").GetComponent<Spieler>().Coins++;
-				consumable.SetActive(false);
-			}
-		}
+                GameObject.Find("Collectibles").GetComponent<ConSpawner>().coinCounter--;
+                Destroy(this.gameObject);
+            }
+            
+        }
 
-	}
+    }
 }

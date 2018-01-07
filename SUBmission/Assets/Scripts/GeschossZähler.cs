@@ -22,7 +22,7 @@ public class GeschossZähler : MonoBehaviour {
 	{
 		spawnedBullets = 0;
 		totalBullets = 0;
-		foreach (GameObject b in GameObject.Find("Spieler").GetComponent<Spieler>().geschoss)
+		/*foreach (GameObject b in GameObject.Find("Spieler").GetComponent<Spieler>().geschoss)
 		{
 			totalBullets++;
 			if (b.activeSelf)
@@ -30,7 +30,11 @@ public class GeschossZähler : MonoBehaviour {
 				spawnedBullets++;
 			}
 		}
-	}
+        */
+        totalBullets= GameObject.Find("Spieler").GetComponent<Spieler>().MaxGeschossCount;
+        spawnedBullets = GameObject.Find("Spieler").GetComponent<Spieler>().GeschossCount;
+
+    }
 	public void anzeigeUpdaten()
 	{
 		ziffer.text = (totalBullets - spawnedBullets).ToString();
