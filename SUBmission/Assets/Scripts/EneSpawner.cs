@@ -22,7 +22,7 @@ public class EneSpawner : Spawner
         {
             if (spawnCondition(spawnable[i]) && notToMuch(spawnable[i]))
             {
-                Instantiate(spawnable[i], new Vector3(x: (Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, 0, 0)).x) + 2f, y: Random.Range(-4f, 4f), z: 1), new Quaternion(0, 0, 0, 0));
+                Instantiate(spawnable[i], new Vector3(x: (Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, 0, 0)).x) + 2f, y: Random.Range(minhight+0.8f, maxhight-0.8f), z: 1), new Quaternion(0, 0, 0, 0));
                 if (spawnable[i].name==("JellyFish"))
                 {
                     JellyCounter++;

@@ -4,35 +4,20 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour {
     public GameObject[] spawnable;
-
-    // Use this for initialization
-    void Start () {
-		
-	}
+    public float minhight;
+    public float maxhight;
+  
 	
 	// Update is called once per frame
 	void Update () {
         spawner();
+        minhight = spawnheight()[0];
+        maxhight = spawnheight()[1];
 
     }
     public virtual void spawner()
     {
-       /* for (int i = 0; i < spawnable.Length; i++)
-        {
-            if (Random.Range(0f, 1000f) < 500f && (!spawnable[i].activeSelf || outOfScreen(spawnable[i]))&& spawnCondition(spawnable[i]))
-            {
-                spawnable[i].transform.position = new Vector3(x: (Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, 0, 0)).x) + 2f, y: Random.Range(-4f, 4f), z: 0);
-                spawnable[i].SetActive(true);
-            }
-        }
-      /*  for (int i = 0; i < spawnable.Length; i++)
-        {
-            if (spawnCondition(spawnable[i])&& notToMuch(spawnable[i]))
-            {
-               a= Instantiate(spawnable[i], new Vector3(x: (Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, 0, 0)).x) + 2f, y: Random.Range(-4f, 4f), z: 1),new Quaternion(0,0,0,0));
-                active.Add(a);
-            }
-        }*/
+    
     }
     virtual public bool spawnCondition(GameObject g)
     {
@@ -42,5 +27,23 @@ public class Spawner : MonoBehaviour {
     virtual public bool notToMuch(GameObject g)
     {
         return true;
+    }
+    public float[] spawnheight()
+    {
+        float[] hits = new float[2];
+        Debug.DrawLine(new Vector2((Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, 0)).x) + 2f, -5f), new Vector2((Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, 0)).x) + 2f, 5f), Color.yellow);
+        RaycastHit2D hit = Physics2D.Linecast(new Vector2((Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, 0)).x) + 2f, -5f), new Vector2((Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, 0)).x) + 2f, 5f), 1 << 9);
+        if (hit.collider != null)
+        {
+            
+            hits[0] = hit.centroid.y;
+        }
+         RaycastHit2D hit2 = Physics2D.Linecast(new Vector2((Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, 0)).x) + 2f, 5f), new Vector2((Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, 0)).x) + 2f, -5f), 1 << 9);
+     if (hit2.collider != null)
+     {
+        hits[1] = hit2.centroid.y;
+        }
+
+        return hits;
     }
 }
