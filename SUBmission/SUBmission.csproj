@@ -230,6 +230,7 @@
     <Compile Include="Assets\Scripts\Enemy.cs" />
     <Compile Include="Assets\Scripts\EneSpawner.cs" />
     <Compile Include="Assets\Scripts\Environment.cs" />
+    <Compile Include="Assets\Scripts\Explosion.cs" />
     <Compile Include="Assets\Scripts\Geschoss.cs" />
     <Compile Include="Assets\Scripts\GeschossZähler.cs" />
     <Compile Include="Assets\Scripts\Harpune.cs" />
@@ -240,6 +241,7 @@
     <Compile Include="Assets\Scripts\Shark.cs" />
     <Compile Include="Assets\Scripts\Spawner.cs" />
     <Compile Include="Assets\Scripts\Spieler.cs" />
+    <Compile Include="Assets\Scripts\Torpedo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

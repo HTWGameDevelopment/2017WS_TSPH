@@ -41,16 +41,32 @@ public class JellyFish : Enemy {
         }
         else if (co.gameObject.tag == "Geschoss")
         {
-            Current_Hp -= GameObject.Find("Spieler").GetComponent<Spieler>().Geschoss_Dmg;
-            if (Current_Hp <= 0)
+            if (co.gameObject.name == "Geschoss(Clone)")
             {
-                Current_Hp = Max_Hp;
-                GameObject.Find("Enemy").GetComponent<EneSpawner>().JellyCounter--;
-                Destroy(this.gameObject);
-                //type.SetActive(false);
+                Current_Hp -= GameObject.Find("Spieler").GetComponent<Spieler>().Geschoss_Dmg;
+                if (Current_Hp <= 0)
+                {
+                    Current_Hp = Max_Hp;
+                    GameObject.Find("Enemy").GetComponent<EneSpawner>().JellyCounter--;
+                    Destroy(this.gameObject);
+                    //type.SetActive(false);
+                }
+            }
+
+            else if (co.gameObject.name == "Torpedo(Clone)" || co.gameObject.name == "Exlposion(Clone)")
+            {
+                Current_Hp -= GameObject.Find("Spieler").GetComponent<Spieler>().Torpedo_Dmg;
+                if (Current_Hp <= 0)
+                {
+                    Current_Hp = Max_Hp;
+                    GameObject.Find("Enemy").GetComponent<EneSpawner>().JellyCounter--;
+                    Destroy(this.gameObject);
+                    //type.SetActive(false);
+                }
             }
         }
     }
+
     public override void destroyOoS(GameObject g)
     {
         GameObject.Find("Enemy").GetComponent<EneSpawner>().JellyCounter--;

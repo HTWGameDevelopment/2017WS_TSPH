@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class GeschossZähler : MonoBehaviour {
 	int spawnedBullets;
 	int totalBullets;
-	public Text ziffer;
 	// Use this for initialization
 	void Start () {
 
@@ -14,30 +13,34 @@ public class GeschossZähler : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		getNumberofBullets();
-		anzeigeUpdaten();
+        if (this.gameObject.name == "AmmoCount")
+        {
+            getNumberOfBullets();
+            anzeigeUpdaten(getNumberOfBullets());
+        }
+        else if(this.gameObject.name=="TorpedoCount")
+        {
+            anzeigeUpdaten(getNumberOfTorpedos());
+        }
 
 	}
-	public void getNumberofBullets()
+	string getNumberOfBullets()
 	{
 		spawnedBullets = 0;
 		totalBullets = 0;
-		/*foreach (GameObject b in GameObject.Find("Spieler").GetComponent<Spieler>().geschoss)
-		{
-			totalBullets++;
-			if (b.activeSelf)
-			{
-				spawnedBullets++;
-			}
-		}
-        */
         totalBullets= GameObject.Find("Spieler").GetComponent<Spieler>().MaxGeschossCount;
         spawnedBullets = GameObject.Find("Spieler").GetComponent<Spieler>().GeschossCount;
+        return (totalBullets - spawnedBullets).ToString();
 
     }
-	public void anzeigeUpdaten()
+    string getNumberOfTorpedos()
+    {
+        return GameObject.Find("Spieler").GetComponent<Spieler>().Torpedos.ToString() + "/" + GameObject.Find("Spieler").GetComponent<Spieler>().MaxTorpedos.ToString();
+
+    }
+	public void anzeigeUpdaten(string i)
 	{
-		ziffer.text = (totalBullets - spawnedBullets).ToString();
+		this.gameObject.GetComponent<Text>().text = i;
 	}
 }
 

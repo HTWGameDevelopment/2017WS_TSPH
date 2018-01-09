@@ -9,6 +9,7 @@ TagManager:
   - Coin
   - Enemy
   - Geschoss
+  - TorpedoBox
   layers:
   - Default
   - TransparentFX

@@ -14,8 +14,16 @@ public class Shark : Enemy
     }
     public override void movment()
     {
-        this.transform.position -= new Vector3(speed, 0, 0);
-    }
+        if (environmentCheck().x == 0 && environmentCheck().y == 0)
+        {
+            this.transform.position -= new Vector3(speed, 0, 0);
+        }
+        else
+        {
+
+            this.transform.position += new Vector3(environmentCheck().x, environmentCheck().y, 0) * (speed+0.02f);
+        }
+        }
     public override void OnTriggerEnter2D(Collider2D co)
     {
         if (co.gameObject.tag == "Player")
@@ -30,13 +38,28 @@ public class Shark : Enemy
         }
         else if (co.gameObject.tag == "Geschoss")
         {
-            Current_Hp -= GameObject.Find("Spieler").GetComponent<Spieler>().Geschoss_Dmg;
-            if (Current_Hp <= 0)
+            if (co.gameObject.name == "Geschoss(Clone)")
             {
-                Current_Hp = Max_Hp;
-                GameObject.Find("Enemy").GetComponent<EneSpawner>().SharkCounter--;
-                Destroy(this.gameObject);
-                //type.SetActive(false);
+                Current_Hp -= GameObject.Find("Spieler").GetComponent<Spieler>().Geschoss_Dmg;
+                if (Current_Hp <= 0)
+                {
+                    Current_Hp = Max_Hp;
+                    GameObject.Find("Enemy").GetComponent<EneSpawner>().SharkCounter--;
+                    Destroy(this.gameObject);
+                    //type.SetActive(false);
+                }
+            }
+
+            else if (co.gameObject.name == "Torpedo(Clone)" || co.gameObject.name == "Exlposion(Clone)")
+            {
+                Current_Hp -= GameObject.Find("Spieler").GetComponent<Spieler>().Torpedo_Dmg;
+                if (Current_Hp <= 0)
+                {
+                    Current_Hp = Max_Hp;
+                    GameObject.Find("Enemy").GetComponent<EneSpawner>().SharkCounter--;
+                    Destroy(this.gameObject);
+                    //type.SetActive(false);
+                }
             }
         }
     }

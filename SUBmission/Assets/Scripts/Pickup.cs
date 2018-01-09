@@ -15,6 +15,10 @@ public class Pickup : MonoBehaviour {
             {
                 GameObject.Find("Collectibles").GetComponent<ConSpawner>().coinCounter--;
             }
+            else if (this.gameObject.tag == "TorpedoBox")
+            {
+                GameObject.Find("Collectibles").GetComponent<ConSpawner>().TBoxCounter--;
+            }
 
             Destroy(this.gameObject);
         }
@@ -40,7 +44,13 @@ public class Pickup : MonoBehaviour {
                 GameObject.Find("Collectibles").GetComponent<ConSpawner>().coinCounter--;
                 Destroy(this.gameObject);
             }
-            
+            else if (this.gameObject.tag == "TorpedoBox")
+            {
+                GameObject.Find("Spieler").GetComponent<Spieler>().Torpedos++;
+                GameObject.Find("Collectibles").GetComponent<ConSpawner>().TBoxCounter--;
+                Destroy(this.gameObject);
+            }
+
         }
 
     }

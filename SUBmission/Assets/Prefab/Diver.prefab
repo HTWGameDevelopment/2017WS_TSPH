@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 212386040892608320}
   - component: {fileID: 70629959608800746}
   - component: {fileID: 114639158982569236}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Diver
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -107,7 +107,7 @@ Transform:
   m_GameObject: {fileID: 1688501564162038}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 5.223, y: -1.284, z: 0}
-  m_LocalScale: {x: 0.09106219, y: 0.06488637, z: 1}
+  m_LocalScale: {x: 0.060708128, y: 0.04325758, z: 1}
   m_Children:
   - {fileID: 224174916967488804}
   m_Father: {fileID: 0}

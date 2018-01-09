@@ -227,7 +227,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &292059842
 GameObject:
@@ -510,12 +510,15 @@ MonoBehaviour:
   spawnable:
   - {fileID: 1254433897479328, guid: b8c746b5f38f2d64aa8aa12a56fdf329, type: 2}
   - {fileID: 1091969186429286, guid: 07480b9a83ce057439bf6343735bcac1, type: 2}
+  - {fileID: 1994510748642568, guid: cc4eb639c13962242b313fba36be5d81, type: 2}
   minhight: 0
   maxhight: 0
   coinCounter: 0
   maxCoin: 2
   HpUpCounter: 0
   MaxHpUp: 2
+  TBoxCounter: 0
+  MaxTBox: 2
 --- !u!4 &652139289
 Transform:
   m_ObjectHideFlags: 0
@@ -527,7 +530,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1046984511
 GameObject:
@@ -782,34 +785,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1108453370}
---- !u!1 &1241630571
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1241630572}
-  m_Layer: 0
-  m_Name: Geschosse
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1241630572
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1241630571}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1356486243
 GameObject:
   m_ObjectHideFlags: 0
@@ -1287,8 +1262,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.2661593}
-  m_Size: {x: 5.6057906, y: 2.9345348}
+  m_Offset: {x: -0.000000032978598, y: -0.3688594}
+  m_Size: {x: 5.605791, y: 2.7291372}
   m_Direction: 1
 --- !u!50 &1963601296
 Rigidbody2D:
@@ -1325,10 +1300,16 @@ MonoBehaviour:
   Current_Hp: 0
   Coins: 0
   Geschoss_Dmg: 10
+  Torpedo_Dmg: 10
+  Explosion_Dmg: 10
+  Explosion_Tickrate: 0.2
   MaxGeschossCount: 3
   GeschossCount: 0
+  Torpedos: 3
+  MaxTorpedos: 5
   projectil:
   - {fileID: 1767061757725734, guid: 735806eb221d6834a996ce2db5543ef2, type: 2}
+  - {fileID: 1493965421385058, guid: df21ab27ec6c50d438823da549c276df, type: 2}
 --- !u!1 &2007846533
 GameObject:
   m_ObjectHideFlags: 0
@@ -1381,7 +1362,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2020266294
 GameObject:

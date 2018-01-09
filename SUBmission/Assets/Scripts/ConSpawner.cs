@@ -8,7 +8,10 @@ public class ConSpawner : Spawner
     public int maxCoin = 2;
     public int HpUpCounter=0;
     public int MaxHpUp=2;
+    public int TBoxCounter = 0;
+    public int MaxTBox = 2;
     int spawnCounterCoin = 0;
+    int spawnCounterTBox = 0;
     int spawnCounterHp = 0;
     public override void spawner()
     {
@@ -25,6 +28,10 @@ public class ConSpawner : Spawner
                 {
                     HpUpCounter++;
                 }
+                else if (spawnable[i].tag == ("TorpedoBox"))
+                {
+                    TBoxCounter++;
+                }
             }
 
         }
@@ -38,6 +45,10 @@ public class ConSpawner : Spawner
         else if (g.tag==("HpUp"))
         {
             return HpUpCounter < MaxHpUp;
+        }
+        else if (g.tag == ("TorpedoBox"))
+        {
+            return TBoxCounter < MaxTBox;
         }
         else return false;
         
@@ -68,6 +79,19 @@ public class ConSpawner : Spawner
             else
             {
                 spawnCounterHp++;
+                return false;
+            }
+        }
+        else if (g.tag == ("TorpedoBox"))
+        {
+            if (spawnCounterTBox == 10)
+            {
+                spawnCounterTBox = 0;
+                return Random.Range(0f, 100f) < 100f;
+            }
+            else
+            {
+                spawnCounterTBox++;
                 return false;
             }
         }

@@ -21,8 +21,17 @@ public class Diver : Enemy
    
     public override void movment()
     {
-        Vector3 nextMove = GameObject.Find("Spieler").GetComponent<Spieler>().transform.position - this.transform.position;
-        this.transform.position += speed*einheitsVector(nextMove); ;
+        
+        if (environmentCheck().x == 0 && environmentCheck().y == 0)
+        {
+            Vector3 nextMove = GameObject.Find("Spieler").GetComponent<Spieler>().transform.position - this.transform.position;
+            this.transform.position += speed * einheitsVector(nextMove); 
+        }
+        else
+        {
+
+            this.transform.position += new Vector3(environmentCheck().x, environmentCheck().y, 0) * (speed + 0.02f);
+        }
     }
     public override void OnTriggerEnter2D(Collider2D co)
     {
