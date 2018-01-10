@@ -13,6 +13,8 @@ public class EneSpawner : Spawner
     public int MaxDiver = 2;
     public int harpunenCounter = 0;//diver
     public int MaxHarpunen = 3;
+    public int bulletCounter = 0;
+    public int MaxBullet = 3;
     int spawnCounterDiver = 0;
     int spawnCounterJelly = 0;
     int spawnCounterShark = 0;

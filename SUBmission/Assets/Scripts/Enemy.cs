@@ -16,7 +16,6 @@ public class Enemy : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        //spawner();
         transformHealth();
         movment();
         if(outOfScreen(this.gameObject))
@@ -24,7 +23,7 @@ public class Enemy : MonoBehaviour {
             destroyOoS(this.gameObject);
         }
         fire();
-        if(Current_Hp==0&&this.gameObject.name!="Harpune(Clone)")
+        if(Current_Hp==0&&this.gameObject.name!="Harpune(Clone)" && this.gameObject.name != "TurretShot(Clone)")//alles adden was nicht mit 0 hp zerstört werden soll
         { destroyOoS(this.gameObject); }
 
     }

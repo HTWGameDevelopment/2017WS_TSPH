@@ -9,6 +9,8 @@ public class UpGreate : MonoBehaviour {
     public int Torpedo_Reserve;
     public int Torpedo_Dmg;
     public int Torpedo_Regeneration;
+    public int Torpedo_Dot;
+    public int Torpedo_Tickrate;
     public int Hp_Max;
     public int Hp_Regeneration;
     public int Player_Speed;

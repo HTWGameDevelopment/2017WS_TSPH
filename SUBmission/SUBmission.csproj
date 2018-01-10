@@ -227,6 +227,7 @@
     <Compile Include="Assets\Scripts\CoinDisplay.cs" />
     <Compile Include="Assets\Scripts\ConSpawner.cs" />
     <Compile Include="Assets\Scripts\Diver.cs" />
+    <Compile Include="Assets\Scripts\DoorButton.cs" />
     <Compile Include="Assets\Scripts\Enemy.cs" />
     <Compile Include="Assets\Scripts\EneSpawner.cs" />
     <Compile Include="Assets\Scripts\Environment.cs" />
@@ -242,6 +243,8 @@
     <Compile Include="Assets\Scripts\Spawner.cs" />
     <Compile Include="Assets\Scripts\Spieler.cs" />
     <Compile Include="Assets\Scripts\Torpedo.cs" />
+    <Compile Include="Assets\Scripts\Turret.cs" />
+    <Compile Include="Assets\Scripts\TurretBullet.cs" />
     <Compile Include="Assets\Scripts\Upgrade.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

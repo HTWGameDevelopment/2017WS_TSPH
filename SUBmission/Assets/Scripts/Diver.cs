@@ -45,15 +45,28 @@ public class Diver : Enemy
             Destroy(this.gameObject);
             //type.SetActive(false);
         }
-        else if (co.gameObject.tag == "Geschoss")
+         else if (co.gameObject.tag == "Geschoss")
         {
-            Current_Hp -= GameObject.Find("Spieler").GetComponent<Spieler>().Geschoss_Dmg;
-            if (Current_Hp <= 0)
+            if (co.gameObject.name == "Geschoss(Clone)")
             {
-                Current_Hp = Max_Hp;
-                GameObject.Find("Enemy").GetComponent<EneSpawner>().DiverCounter--;
-                Destroy(this.gameObject);
-                //type.SetActive(false);
+                Current_Hp -= GameObject.Find("Spieler").GetComponent<Spieler>().Geschoss_Dmg;
+                if (Current_Hp <= 0)
+                {
+                    Current_Hp = Max_Hp;
+                    GameObject.Find("Enemy").GetComponent<EneSpawner>().DiverCounter--;
+                    Destroy(this.gameObject);
+                }
+            }
+
+            else if (co.gameObject.name == "Torpedo(Clone)" || co.gameObject.name == "Exlposion(Clone)")
+            {
+                Current_Hp -= GameObject.Find("Spieler").GetComponent<Spieler>().Torpedo_Dmg;
+                if (Current_Hp <= 0)
+                {
+                    Current_Hp = Max_Hp;
+                    GameObject.Find("Enemy").GetComponent<EneSpawner>().DiverCounter--;
+                    Destroy(this.gameObject);
+                }
             }
         }
     }
@@ -76,7 +89,7 @@ public class Diver : Enemy
     public override void fire()
     {
         time += Time.deltaTime;
-        if (time >= timeDelayBetweenshoots)
+        if (time >= timeDelayBetweenshoots && GameObject.Find("Enemy").GetComponent<EneSpawner>().harpunenCounter < GameObject.Find("Enemy").GetComponent<EneSpawner>().MaxHarpunen)
         {
             shooting(Harpune);
         }
