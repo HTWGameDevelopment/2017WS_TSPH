@@ -7,9 +7,13 @@ public class PlayerWeapons : MonoBehaviour {
 	void Update () {
         movment();
         spezial();
-        if(exactOutOfScreen(this.gameObject))
+        if(exactOutOfScreen(this.gameObject)&&this.gameObject.name!= "Torpedo(Clone)")
         {
             Destroy();
+        }
+        else if(exactOutOfScreen(this.gameObject)&&this.gameObject.name == "Torpedo(Clone)")
+        {
+            Destroy(this.gameObject);
         }
 		
 	}

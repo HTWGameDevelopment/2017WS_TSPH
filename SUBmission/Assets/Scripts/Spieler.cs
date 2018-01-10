@@ -26,45 +26,48 @@ public class Spieler : MonoBehaviour {
 
 	//  Update is called once per frame
 	void Update () {
+        movment();
+        shoot();
+	}
+    void movment()
+    {
+        //Eingabe speichern
+        float xEingabe = Input.GetAxis("Horizontal");
+        float yEingabe = Input.GetAxis("Vertical");
 
+        //Neue Position bestimmen
 
+        float xNeu = transform.position.x + xEingabe * eingabeFaktor * Time.deltaTime;
+        float yNeu = transform.position.y + yEingabe * eingabeFaktor * Time.deltaTime;
 
-		//Eingabe speichern
-		float xEingabe = Input.GetAxis ("Horizontal");
-		float yEingabe = Input.GetAxis ("Vertical");
-
-		//Neue Position bestimmen
-
-		float xNeu = transform.position.x + xEingabe * eingabeFaktor* Time.deltaTime ;
-		float yNeu = transform.position.y + yEingabe * eingabeFaktor* Time.deltaTime ;
-
-		if (yNeu < -4f) {
+        /*if (yNeu < -4f) {
 			yNeu = -4f;
 		} 
 
 		if (yNeu > 4f) {
 			yNeu = 4f;
-		}
+		}*/
 
-		Vector3 p = Camera.main.ScreenToWorldPoint (new Vector3 (0, 0, 0));
-		Vector3 q = Camera.main.ScreenToWorldPoint (new Vector3 (Screen.width, 0, 0));
+        Vector3 p = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, 0));
+        Vector3 q = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, 0, 0));
 
-		if (xNeu < p.x + -1.5f){
-			Current_Hp = 0f;
-			xNeu =p.x+1.5f;
-		}
+        if (xNeu < p.x + -1.5f)
+        {
+            Current_Hp = 0f;
+            xNeu = p.x + 1.5f;
+        }
 
-		if (xNeu > q.x-1.5f){
-			xNeu =q.x-1.5f;
-		}
-
-		
-
+        if (xNeu > q.x - 1.5f)
+        {
+            xNeu = q.x - 1.5f;
+        }
 
 
-		transform.position = new Vector2 (xNeu, yNeu);
-        shoot();
-	}
+
+
+
+        transform.position = new Vector2(xNeu, yNeu);
+    }
 
 
 	void OnTriggerEnter2D(Collider2D coll)

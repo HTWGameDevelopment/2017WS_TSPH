@@ -44,7 +44,7 @@ public class Pickup : MonoBehaviour {
                 GameObject.Find("Collectibles").GetComponent<ConSpawner>().coinCounter--;
                 Destroy(this.gameObject);
             }
-            else if (this.gameObject.tag == "TorpedoBox")
+            else if (this.gameObject.tag == "TorpedoBox"&& GameObject.Find("Spieler").GetComponent<Spieler>().Torpedos< GameObject.Find("Spieler").GetComponent<Spieler>().MaxTorpedos)
             {
                 GameObject.Find("Spieler").GetComponent<Spieler>().Torpedos++;
                 GameObject.Find("Collectibles").GetComponent<ConSpawner>().TBoxCounter--;

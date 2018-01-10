@@ -242,6 +242,7 @@
     <Compile Include="Assets\Scripts\Spawner.cs" />
     <Compile Include="Assets\Scripts\Spieler.cs" />
     <Compile Include="Assets\Scripts\Torpedo.cs" />
+    <Compile Include="Assets\Scripts\Upgrade.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
