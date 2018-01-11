@@ -9,7 +9,7 @@ public class DoorButton : MonoBehaviour {
     bool hit = false;
 	// Use this for initialization
 	void Start () {
-        bool hit = false;
+        hit = false;
     }
 	
 	// Update is called once per frame

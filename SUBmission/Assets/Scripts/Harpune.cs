@@ -19,24 +19,26 @@ public class Harpune : Enemy
         {
             //gameObject.SetActive(false);
             GameObject.Find("Spieler").GetComponent<Spieler>().Current_Hp-= harpunenDmg;
+            GameObject.Find("Dmg").GetComponent<PointSystem>().dmgrecived += harpunenDmg;
             if (GameObject.Find("Spieler").GetComponent<Spieler>().Current_Hp < 0)
-            { GameObject.Find("Spieler").GetComponent<Spieler>().Current_Hp = 0; }
-            GameObject.Find("Enemy").GetComponent<EneSpawner>().harpunenCounter--;
-            Destroy(this.gameObject);
+            {
+                GameObject.Find("Dmg").GetComponent<PointSystem>().deaths++;
+                GameObject.Find("Spieler").GetComponent<Spieler>().Current_Hp = 0; }
+            destroy();
         }
         else if (col.gameObject.tag == "Geschoss")
         {
-                Destroy(this.gameObject);
+            destroy();
         }
     }
     public override void movment()
     {
         this.transform.position += direction*speed;
     }
-    public override void destroyOoS(GameObject g)
+    public override void destroy()
     {
         GameObject.Find("Enemy").GetComponent<EneSpawner>().harpunenCounter--;
-        Destroy(g);
+        Destroy(this.gameObject);
     }
     public override void transformHealth()
     {

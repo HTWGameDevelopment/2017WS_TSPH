@@ -9,8 +9,10 @@ public class Spieler : MonoBehaviour {
 	public float Current_Hp = 0f;
 	public int Coins = 0;
     public float Geschoss_Dmg=10f;
-    public float Torpedo_Dmg = 10f;
-    public float Explosion_Dmg = 10f;
+    public float Torpedo_Dmg = 20f;
+    public float Explosion_Dmg = 50f;
+    public float Explosion_DmgDelay = 0.1f;
+    public float Explosion_DotDmg = 10f;
     public float Explosion_Tickrate = 0.2f;
     public int MaxGeschossCount = 3;
     public int GeschossCount = 0;
@@ -89,8 +91,11 @@ public class Spieler : MonoBehaviour {
 
 	void HealthChange(int schaden){
 		Current_Hp = Current_Hp-schaden;
+        GameObject.Find("Dmg").GetComponent<PointSystem>().dmgrecived += schaden;
         if(Current_Hp<=0)
-        { Current_Hp = 0; }
+        {
+            GameObject.Find("Dmg").GetComponent<PointSystem>().deaths++;
+            Current_Hp = 0; }
 	}
     void resetPlayer()
     {

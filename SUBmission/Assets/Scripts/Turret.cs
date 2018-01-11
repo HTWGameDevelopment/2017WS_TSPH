@@ -24,40 +24,6 @@ public class Turret : Enemy {
         winkel = Mathf.Atan2(rotation.y, rotation.x) / Mathf.PI * 180f;
         turretBarrel.transform.rotation = Quaternion.Euler(0, 0, winkel+180f);
     }
-    public override void OnTriggerEnter2D(Collider2D co)
-    {
-        if (co.gameObject.tag == "Player")
-        {
-            GameObject.Find("Spieler").GetComponent<Spieler>().Current_Hp -= Collision_Dmg;
-            if (GameObject.Find("Spieler").GetComponent<Spieler>().Current_Hp < 0)
-            { GameObject.Find("Spieler").GetComponent<Spieler>().Current_Hp = 0; }
-            Current_Hp = Max_Hp;
-            Destroy(this.gameObject);
-            //type.SetActive(false);
-        }
-        else if (co.gameObject.tag == "Geschoss")
-        {
-            if (co.gameObject.name == "Geschoss(Clone)")
-            {
-                Current_Hp -= GameObject.Find("Spieler").GetComponent<Spieler>().Geschoss_Dmg;
-                if (Current_Hp <= 0)
-                {
-                    Current_Hp = Max_Hp;
-                    Destroy(this.gameObject);
-                }
-            }
-
-            else if (co.gameObject.name == "Torpedo(Clone)" || co.gameObject.name == "Exlposion(Clone)")
-            {
-                Current_Hp -= GameObject.Find("Spieler").GetComponent<Spieler>().Torpedo_Dmg;
-                if (Current_Hp <= 0)
-                {
-                    Current_Hp = Max_Hp;
-                    Destroy(this.gameObject);
-                }
-            }
-        }
-    }
     public override void shooting(GameObject g)
     {
         Vector3 rotation = GameObject.Find("Spieler").GetComponent<Spieler>().transform.position -turretBarrel.transform.position;

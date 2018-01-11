@@ -239,6 +239,7 @@
     <Compile Include="Assets\Scripts\JellyFish.cs" />
     <Compile Include="Assets\Scripts\Pickup.cs" />
     <Compile Include="Assets\Scripts\PlayerWeapons.cs" />
+    <Compile Include="Assets\Scripts\PointSystem.cs" />
     <Compile Include="Assets\Scripts\Shark.cs" />
     <Compile Include="Assets\Scripts\Spawner.cs" />
     <Compile Include="Assets\Scripts\Spieler.cs" />

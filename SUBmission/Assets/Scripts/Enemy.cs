@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour {
     public GameObject healthBar;
-    public GameObject type;
     public float Max_Hp=100f;
     public float Current_Hp;
     public float Collision_Dmg=10f;
@@ -20,11 +19,11 @@ public class Enemy : MonoBehaviour {
         movment();
         if(outOfScreen(this.gameObject))
         {
-            destroyOoS(this.gameObject);
+            destroy();
         }
         fire();
-        if(Current_Hp==0&&this.gameObject.name!="Harpune(Clone)" && this.gameObject.name != "TurretShot(Clone)")//alles adden was nicht mit 0 hp zerstört werden soll
-        { destroyOoS(this.gameObject); }
+        if(Current_Hp<=0&&this.gameObject.name!="Harpune(Clone)" && this.gameObject.name != "TurretShot(Clone)")//alles adden was nicht mit 0 hp zerstört werden soll
+        { destroy(); }
 
     }
     virtual public void movment()
@@ -41,10 +40,13 @@ public class Enemy : MonoBehaviour {
         if (co.gameObject.tag == "Player")
         {
             GameObject.Find("Spieler").GetComponent<Spieler>().Current_Hp -= Collision_Dmg;
+            GameObject.Find("Dmg").GetComponent<PointSystem>().dmgrecived += Collision_Dmg;
             if (GameObject.Find("Spieler").GetComponent<Spieler>().Current_Hp < 0)
-            { GameObject.Find("Spieler").GetComponent<Spieler>().Current_Hp = 0; }
+            {
+                GameObject.Find("Dmg").GetComponent<PointSystem>().deaths++;
+                GameObject.Find("Spieler").GetComponent<Spieler>().Current_Hp = 0; }
             Current_Hp = Max_Hp;
-            Destroy(this.gameObject);
+            destroy();
         }
         else if (co.gameObject.tag == "Geschoss")
         {
@@ -54,7 +56,7 @@ public class Enemy : MonoBehaviour {
                 if (Current_Hp <= 0)
                 {
                     Current_Hp = Max_Hp;
-                    Destroy(this.gameObject);
+                    destroy();
                 }
             }
 
@@ -64,7 +66,7 @@ public class Enemy : MonoBehaviour {
                 if (Current_Hp <= 0)
                 {
                     Current_Hp = Max_Hp;
-                    Destroy(this.gameObject);
+                    destroy();
                 }
             }
         }
@@ -73,9 +75,9 @@ public class Enemy : MonoBehaviour {
     {
         return (g.transform.position.x <= Camera.main.ScreenToWorldPoint(new Vector3(-4f, 0, 0)).x || g.transform.position.y <= Camera.main.ScreenToWorldPoint(new Vector3(0, -4f, 0)).y || g.transform.position.y >= Camera.main.ScreenToWorldPoint(new Vector3(0, Screen.height+4f, 0)).y|| g.transform.position.y >= Camera.main.ScreenToWorldPoint(new Vector3(Screen.width+5f, 0, 0)).x);
     }
-    public virtual void destroyOoS(GameObject g)
+    public virtual void destroy()
     {
-
+        Destroy(this.gameObject);
     }
     public virtual void shooting(GameObject g)
     {
@@ -125,5 +127,13 @@ public class Enemy : MonoBehaviour {
             return einheitsVector2D(-einheitsVector2D(hit2.centroid - center) - new Vector2(0, 1));
         }
         return vec;
+    }
+    public virtual void takesDmg(float Dmg,float hpPool,int counter)//not finished
+    {
+        hpPool -= Dmg;
+        if (hpPool<=0)
+        {
+
+        }
     }
 }

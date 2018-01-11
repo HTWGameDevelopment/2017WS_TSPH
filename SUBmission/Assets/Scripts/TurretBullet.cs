@@ -20,24 +20,23 @@ public class TurretBullet : Enemy {
         {
             //gameObject.SetActive(false);
             GameObject.Find("Spieler").GetComponent<Spieler>().Current_Hp -= bulletDmg;
+            GameObject.Find("Dmg").GetComponent<PointSystem>().dmgrecived += bulletDmg;
             if (GameObject.Find("Spieler").GetComponent<Spieler>().Current_Hp < 0)
-            { GameObject.Find("Spieler").GetComponent<Spieler>().Current_Hp = 0; }
-            GameObject.Find("Enemy").GetComponent<EneSpawner>().bulletCounter--;
-            Destroy(this.gameObject);
+            {
+                GameObject.Find("Dmg").GetComponent<PointSystem>().deaths++;
+                GameObject.Find("Spieler").GetComponent<Spieler>().Current_Hp = 0;
+            }
+            destroy();
         }
-        /*else if (col.gameObject.tag == "Geschoss")
-        {
-            Destroy(this.gameObject);
-        }*/
     }
     public override void movment()
     {
         this.transform.position += direction * speed;
     }
-    public override void destroyOoS(GameObject g)
+    public override void destroy()
     {
         GameObject.Find("Enemy").GetComponent<EneSpawner>().bulletCounter--;
-        Destroy(g);
+        Destroy(this.gameObject);
     }
     public override void transformHealth()
     {

@@ -70,6 +70,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destroyDelay: 2
   tick: 0
+  dot: 0
 --- !u!212 &212833158232829008
 SpriteRenderer:
   m_ObjectHideFlags: 1

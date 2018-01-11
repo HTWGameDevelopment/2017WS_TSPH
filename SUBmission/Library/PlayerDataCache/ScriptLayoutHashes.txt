@@ -110,7 +110,7 @@ e9bdabf9265d758d56f01bb188916fa8 UnityEngine.Networking.dll:UnityEngine.Networki
 73843688b51256aed059f049c540bca8 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformChild
 528ea1fd7c01796fc60c4e2f172ea229 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformVisualizer
 9de3a22eca9aefadba2d10d5987cefe3 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
-b076d268d1b58f7e872634064caecbe3 Assembly-CSharp.dll:.EneSpawner
+c8323df8a4b9768ea458b3a25e4d9bdf Assembly-CSharp.dll:.EneSpawner
 41b1084513ec464d96f85671c18def4e Assembly-CSharp.dll:.HealthBar
 dc07d7ad69b399a46e92c483bf1c04ca UnityEngine.Analytics.dll:UnityEngine.Analytics.AnalyticsTracker
 bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.AudioSpatializerMicrosoft
@@ -119,7 +119,8 @@ bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.Audi
 c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingCollider
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingRenderer
 ae3de1272ffca76752e43c43269a7e40 Assembly-CSharp.dll:.ConSpawner
-99cf9ea4eb1303bc9b527a8f8d5970ef Assembly-CSharp.dll:.Spieler
+44cee9ac6c4c6d8476c81870ab7c31cb Assembly-CSharp.dll:.DoorButton
+a076d45309a05019985a016106b78963 Assembly-CSharp.dll:.Spieler
 32e8fe00b63ed946490b898f6024a2f2 Facebook.Unity.Settings.dll:Facebook.Unity.Settings.FacebookSettings
 fc1e0f4d8439d9928083474691511a13 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Networking.dll:UnityEngine.Networking.NetworkBehaviour
@@ -149,8 +150,11 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingRenderer
 0a13f613d1791189840bf9acc5f08efe Assembly-CSharp.dll:.Diver
 9de3a22eca9aefadba2d10d5987cefe3 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
+bef2f89106547ee2df57adc4be7b7b41 Assembly-CSharp.dll:.TurretBullet
 d648e42e5770252c4760b0586ad460ee Assembly-CSharp.dll:.Spawner
-338d1727a924bb0b697f718bccb1d704 Assembly-CSharp.dll:.Explosion
+12569088abc007e3557587b771e26de1 Assembly-CSharp.dll:.Explosion
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.GeschossZähler
-d648e42e5770252c4760b0586ad460ee Assembly-CSharp.dll:.BackrSpawner
+0bc11dd6faa4f4bd8a997d5bd9b0b036 Assembly-CSharp.dll:.BackrSpawner
+376c91571311a3ade21b2842ec36393d Assembly-CSharp.dll:.Turret
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Pickup
+6e2e786a2d319542b409fb15f39249a8 Assembly-CSharp.dll:.PointSystem
