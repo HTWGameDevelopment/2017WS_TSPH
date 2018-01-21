@@ -69,7 +69,7 @@ public class Explosion : PlayerWeapons
                     Turret turret = en.gameObject.GetComponent<Turret>();
                     turret.Current_Hp -= dmg;
                 }
-                else if (en.gameObject.name == "Harpune(Clone)")
+                /*else if (en.gameObject.name == "Harpune(Clone)")
                 {
                     GameObject.Find("Enemy").GetComponent<EneSpawner>().harpunenCounter--;
                     Destroy(this.gameObject);
@@ -78,7 +78,7 @@ public class Explosion : PlayerWeapons
                 {
                     GameObject.Find("Enemy").GetComponent<EneSpawner>().bulletCounter--;
                     Destroy(this.gameObject);
-                }
+                }*/
             }
     }
 }

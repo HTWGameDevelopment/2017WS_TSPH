@@ -28,7 +28,14 @@ public class Harpune : Enemy
         }
         else if (col.gameObject.tag == "Geschoss")
         {
-            destroy();
+            if (col.gameObject.name == "Geschoss(Clone)")
+            {
+                    destroy();
+            }
+            else if (col.gameObject.name == "Torpedo(Clone)")
+            {
+                    destroy();
+            }
         }
     }
     public override void movment()
