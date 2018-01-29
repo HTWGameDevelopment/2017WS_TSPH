@@ -8,7 +8,7 @@ public class Torpedo : PlayerWeapons
     public float speed = 0.05f;
     public override void movment()
     {
-        this.transform.position += new Vector3(speed, 0, 0);
+        this.transform.position += new Vector3(speed * Time.deltaTime * 75, 0, 0);
     }
     public override void Destroy()
     {

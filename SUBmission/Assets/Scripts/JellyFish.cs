@@ -18,7 +18,7 @@ public class JellyFish : Enemy {
     {
         if (movmentCounter < 40)
         {
-            this.transform.position += new Vector3(0, speed, 0);
+            this.transform.position += new Vector3(0, speed * Time.deltaTime * 75, 0);
             movmentCounter++;
         }
         if(movmentCounter==40)

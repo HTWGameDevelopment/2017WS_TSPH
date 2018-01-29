@@ -16,12 +16,12 @@ public class Shark : Enemy
     {
         if (environmentCheck().x == 0 && environmentCheck().y == 0)
         {
-            this.transform.position -= new Vector3(speed, 0, 0);
+            this.transform.position -= new Vector3(speed * Time.deltaTime * 75, 0, 0);
         }
         else
         {
 
-            this.transform.position += new Vector3(environmentCheck().x, environmentCheck().y, 0) * (speed+0.02f);
+            this.transform.position += new Vector3(environmentCheck().x, environmentCheck().y, 0) * (speed+0.02f) * Time.deltaTime * 75;
         }
         }
     public override void destroy()

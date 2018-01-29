@@ -31,7 +31,7 @@ public class TurretBullet : Enemy {
     }
     public override void movment()
     {
-        this.transform.position += direction * speed;
+        this.transform.position += direction * speed * Time.deltaTime * 75;
     }
     public override void destroy()
     {

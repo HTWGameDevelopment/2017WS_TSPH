@@ -12,7 +12,7 @@ public class CameraController : MonoBehaviour {
 
 	// Update is called once per frame
 	void LateUpdate () {
-		GameObject.Find("Main Camera").transform.position += new Vector3 (scrollSpeed, 0, 0);
+		GameObject.Find("Main Camera").transform.position += new Vector3 (scrollSpeed*Time.deltaTime*75, 0, 0);
 
 	}
 }

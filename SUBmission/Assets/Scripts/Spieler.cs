@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Spieler : MonoBehaviour {
 
@@ -85,7 +86,22 @@ public class Spieler : MonoBehaviour {
         {
             resetPlayer();
         }
-
+        else if(coll.gameObject.tag=="Finish")
+        {
+            Scene currentScene = SceneManager.GetActiveScene();
+            if(currentScene.name =="OpenSea")
+            {
+                SceneManager.LoadScene("Cave");
+            }
+            else if (currentScene.name == "Cave")
+            {
+                SceneManager.LoadScene("Indoor");
+            }
+            else if (currentScene.name == "Indoor")
+            {
+                SceneManager.LoadScene("OpenSea");
+            }
+        }
     }
 
 

@@ -25,7 +25,7 @@ public class Diver : Enemy
         if (environmentCheck().x == 0 && environmentCheck().y == 0)
         {
             Vector3 nextMove = GameObject.Find("Spieler").GetComponent<Spieler>().transform.position - this.transform.position;
-            this.transform.position += speed * einheitsVector(nextMove); 
+            this.transform.position += speed * einheitsVector(nextMove) * Time.deltaTime * 75; 
         }
         else
         {
