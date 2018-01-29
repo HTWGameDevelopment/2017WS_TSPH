@@ -6,15 +6,22 @@ public class ConSpawner : Spawner
 {
     public int coinCounter=0;
     public int maxCoin = 2;
+    public float coinWarsch = 0f;
     public int HpUpCounter=0;
     public int MaxHpUp=2;
+    public float hpupWarsch = 0f;
     public int TBoxCounter = 0;
     public int MaxTBox = 2;
-    int spawnCounterCoin = 0;
-    int spawnCounterTBox = 0;
-    int spawnCounterHp = 0;
+    public float tboxWarsch = 0f;
+    public float spawnDelay=5f;
+    float spawnCounterCoin = 0f;
+    float spawnCounterTBox = 0f;
+    float spawnCounterHp = 0f;
     public override void spawner()
     {
+        coinWarsch = 80f;
+        hpupWarsch = (1-GameObject.Find("Spieler").GetComponent<Spieler>().Current_Hp / GameObject.Find("Spieler").GetComponent<Spieler>().Max_Hp)*70+30;
+        tboxWarsch = (1 - (GameObject.Find("Spieler").GetComponent<Spieler>().Torpedos / GameObject.Find("Spieler").GetComponent<Spieler>().MaxTorpedos)) * 60+10;
         for (int i = 0; i < spawnable.Length; i++)
         {
             if (spawnCondition(spawnable[i]) && notToMuch(spawnable[i]))
@@ -57,41 +64,41 @@ public class ConSpawner : Spawner
     {
         if (g.tag==("Coin"))
         {
-            if (spawnCounterCoin == 10)
+            if (spawnCounterCoin >= spawnDelay)
             {
-                spawnCounterCoin = 0;
-                return Random.Range(0f, 100f) < 100f;
+                spawnCounterCoin = 0-Random.Range(0f, 2f);
+                return Random.Range(0f, 100f) < coinWarsch;
             }
             else
             {
-                spawnCounterCoin++;
+                spawnCounterCoin+= Time.deltaTime;
                 return false;
             }
 
         }
         else if (g.tag==("HpUp"))
         {
-            if (spawnCounterHp == 10)
+            if (spawnCounterHp >= spawnDelay)
             {
-                spawnCounterHp = 0;
-                return Random.Range(0f, 100f) < 100f;
+                spawnCounterHp = 0- Random.Range(0f, 2f);
+                return Random.Range(0f, 100f) < hpupWarsch;
             }
             else
             {
-                spawnCounterHp++;
+                spawnCounterHp+=Time.deltaTime;
                 return false;
             }
         }
         else if (g.tag == ("TorpedoBox"))
         {
-            if (spawnCounterTBox == 10)
+            if (spawnCounterTBox >= spawnDelay)
             {
-                spawnCounterTBox = 0;
-                return Random.Range(0f, 100f) < 100f;
+                spawnCounterTBox = 0- Random.Range(0f, 2f);
+                return Random.Range(0f, 100f) < tboxWarsch;
             }
             else
             {
-                spawnCounterTBox++;
+                spawnCounterTBox+= Time.deltaTime;
                 return false;
             }
         }
