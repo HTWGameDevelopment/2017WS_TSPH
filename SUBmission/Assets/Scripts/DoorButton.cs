@@ -22,6 +22,7 @@ public class DoorButton : MonoBehaviour {
         if(collision.gameObject.tag=="Geschoss"&& this.gameObject.GetComponent<SpriteRenderer>().sprite != button2)
         {
             this.gameObject.GetComponent<SpriteRenderer>().sprite = button2;
+            this.gameObject.GetComponent<BoxCollider2D>().enabled = false;
             hit = true;
         }
     }

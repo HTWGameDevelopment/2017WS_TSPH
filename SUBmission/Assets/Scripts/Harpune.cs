@@ -30,11 +30,11 @@ public class Harpune : Enemy
         {
             if (col.gameObject.name == "Geschoss(Clone)")
             {
-                    destroy();
+                destroy();
             }
             else if (col.gameObject.name == "Torpedo(Clone)")
             {
-                    destroy();
+                destroy();
             }
         }
     }
