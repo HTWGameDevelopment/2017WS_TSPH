@@ -141,6 +141,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnable:
   - {fileID: 1689183835688028, guid: 6dcf1447ff4db434295bb9c262868a87, type: 2}
+  - {fileID: 1159959436406624, guid: 0b3e357e2721ea749aa8fc0d21c95b4a, type: 2}
+  - {fileID: 1415463527099302, guid: 30688ee8eddcdcf499b254e92dfd9337, type: 2}
+  - {fileID: 1506338019889114, guid: 5a3767779ae02ad4baae034c41529560, type: 2}
+  - {fileID: 1676940766016510, guid: 4087626f7ec3e9e4dac7bc6642d33e69, type: 2}
+  - {fileID: 1085979805834166, guid: 67fbb9ce1e68a4446ba32c45ad641a2f, type: 2}
   minhight: 0
   maxhight: 0
   boxSpawned: 0
