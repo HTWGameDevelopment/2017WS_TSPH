@@ -19,7 +19,6 @@ public class Spieler : MonoBehaviour {
 	public int GeschossCount = 0;
 	public int Torpedos = 0;
 	public int MaxTorpedos = 1;
-	public GameObject data;
 	// Use this for initialization
 	void Start () {
         pullData();
@@ -32,9 +31,8 @@ public class Spieler : MonoBehaviour {
 	//  Update is called once per frame
 	void Update () {
 
-		MaxTorpedos = 5 + data.GetComponent<DataScript>().TorpedosLevel;
+		MaxTorpedos = 5 + GameObject.Find(".GetComponent<DataScript>().TorpedosLevel;
 		MaxGeschossCount = 3 + data.GetComponent<DataScript>().GeschossLevel;
-		Coins = data.GetComponent<DataScript>().Coins;
 		Max_Hp = 100 + (10 * data.GetComponent<DataScript>().Max_HpLevel);
 
 
