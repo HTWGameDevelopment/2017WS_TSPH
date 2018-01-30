@@ -36,7 +36,6 @@ public class DataScript : MonoBehaviour {
 		upgradeTorpedoButton.onClick.AddListener (upgradeTorpedoButton_Click);
 	}
 
-
 	public void  upgradeHealthButton_Click(){
 		Max_HpLevel ++;
 	}
