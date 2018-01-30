@@ -79,7 +79,7 @@
      <Compile Include="Assets\Scripts\TurretBullet.cs" />
      <Compile Include="Assets\Scripts\Upgrade.cs" />
  <Reference Include="Facebook.Unity.Settings">
- <HintPath>C:/Users/schol/Documents/UnityProjects/SUBmission/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
+ <HintPath>C:/Users/schol/Desktop/SUBmission/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
  </Reference>
  <Reference Include="Vuforia.UnityExtensions">
  <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/VuforiaSupport/Managed/Runtime/Vuforia.UnityExtensions.dll</HintPath>
