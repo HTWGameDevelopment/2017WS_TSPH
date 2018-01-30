@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{08BF8618-A191-B671-C4C5-AA756A10545C}</ProjectGuid>
+    <ProjectGuid>{B7610368-87DD-9A0E-4F89-5EFA09484B9C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -53,8 +53,10 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\BackrSpawner.cs" />
      <Compile Include="Assets\Scripts\CameraController.cs" />
+     <Compile Include="Assets\Scripts\CharacterMenu.cs" />
      <Compile Include="Assets\Scripts\CoinDisplay.cs" />
      <Compile Include="Assets\Scripts\ConSpawner.cs" />
+     <Compile Include="Assets\Scripts\DataScript.cs" />
      <Compile Include="Assets\Scripts\Diver.cs" />
      <Compile Include="Assets\Scripts\DoorButton.cs" />
      <Compile Include="Assets\Scripts\Enemy.cs" />
@@ -75,12 +77,13 @@
      <Compile Include="Assets\Scripts\Shark.cs" />
      <Compile Include="Assets\Scripts\Spawner.cs" />
      <Compile Include="Assets\Scripts\Spieler.cs" />
+     <Compile Include="Assets\Scripts\StatValues.cs" />
      <Compile Include="Assets\Scripts\Torpedo.cs" />
      <Compile Include="Assets\Scripts\Turret.cs" />
      <Compile Include="Assets\Scripts\TurretBullet.cs" />
      <Compile Include="Assets\Scripts\Upgrade.cs" />
  <Reference Include="Facebook.Unity.Settings">
- <HintPath>C:/Users/schol/Desktop/SUBmission/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
+ <HintPath>C:/Users/schol/Desktop/SUBmission1/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
  </Reference>
  <Reference Include="Vuforia.UnityExtensions">
  <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/VuforiaSupport/Managed/Runtime/Vuforia.UnityExtensions.dll</HintPath>
