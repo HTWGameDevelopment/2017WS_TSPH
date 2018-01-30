@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PauseScript : MonoBehaviour {
     public bool paused; 
+	public Button resumeButton;
 
 	// Use this for initialization
 	void Start () {
@@ -13,6 +15,7 @@ public class PauseScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if (Input.GetKeyDown(KeyCode.P))
         {
             if (!paused)
             {
@@ -25,6 +28,8 @@ public class PauseScript : MonoBehaviour {
                 paused = false;
             }
         }
+		resumeButton.onClick.AddListener (resumeButton_Click);
+
         pause(paused);
 		
 	}
@@ -36,4 +41,12 @@ public class PauseScript : MonoBehaviour {
         }
         else Time.timeScale = 1;
     }
+
+	public void resumeButton_Click(){
+
+		GameObject.Find("Ui Camera/HUD/PausePanel").SetActive(false);
+		paused = false;
+	
+	}
+
 }
