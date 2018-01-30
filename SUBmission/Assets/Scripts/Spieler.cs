@@ -21,6 +21,7 @@ public class Spieler : MonoBehaviour {
     public int MaxTorpedos = 5;
 	// Use this for initialization
 	void Start () {
+        pullData();
 		Current_Hp = Max_Hp;
 	}
 	float eingabeFaktor = 8;
@@ -88,6 +89,7 @@ public class Spieler : MonoBehaviour {
         }
         else if(coll.gameObject.tag=="Finish")
         {
+            pushData();
             Scene currentScene = SceneManager.GetActiveScene();
             if(currentScene.name =="OpenSea")
             {
@@ -166,6 +168,16 @@ public class Spieler : MonoBehaviour {
         RaycastHit2D hit = Physics2D.Linecast(new Vector2((Camera.main.ScreenToWorldPoint(new Vector2(Screen.width / 4, 0)).x) + 4f, y-1.5f), new Vector2((Camera.main.ScreenToWorldPoint(new Vector2(Screen.width / 4, 0)).x) - 4f, y-1.5f), 1 << 9);
         RaycastHit2D hit2 = Physics2D.Linecast(new Vector2((Camera.main.ScreenToWorldPoint(new Vector2(Screen.width / 4, 0)).x) + 4f, y+1.5f), new Vector2((Camera.main.ScreenToWorldPoint(new Vector2(Screen.width / 4, 0)).x) - 4f, y+1.5f), 1 << 9);
         return (hit.collider == null && hit2.collider == null);
+    }
+    public void pushData()
+    {
+        GameObject.Find("DataManager").GetComponent<StatValues>().money = Coins;
+    }
+    public void pullData()
+    {
+        if(GameObject.Find("DataManager"))
+
+        Coins = GameObject.Find("DataManager").GetComponent<StatValues>().money;
     }
 
 }
