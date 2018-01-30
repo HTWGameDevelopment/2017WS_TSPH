@@ -26,7 +26,7 @@ public class HealthBar : MonoBehaviour {
 	}
 	public void healthUpdate()
 	{
-		Max_Hp = GameObject.Find ("Spieler").GetComponent<Spieler>().Max_Hp;
+		Max_Hp = 100f + (10 * GameObject.Find ("Data").GetComponent<DataScript>().Max_HpLevel);
 		Current_Hp = GameObject.Find ("Spieler").GetComponent<Spieler>().Current_Hp;
 	}
 }

@@ -10,19 +10,22 @@ public class CharacterMenu : MonoBehaviour {
 	public Text maxHealth;
 	public Text maxTorpedo;
 	public Text maxAmmo;
-	public GameObject SpielerReferance;
+	public GameObject data;
 
 
 	// Use this for initialization
 	void Start () {
-		coins.text = SpielerReferance.GetComponent<Spieler>().Coins.ToString();
-		maxHealth.text = SpielerReferance.GetComponent<Spieler>().Max_Hp.ToString();
-		maxTorpedo.text= SpielerReferance.GetComponent<Spieler>().MaxTorpedos.ToString();
-		maxAmmo.text= SpielerReferance.GetComponent<Spieler>().MaxGeschossCount.ToString();
+		coins.text = data.GetComponent<DataScript>().Coins.ToString();
+		maxHealth.text = data.GetComponent<DataScript>().Max_HpLevel.ToString();
+		maxTorpedo.text= data.GetComponent<DataScript>().TorpedosLevel.ToString();
+		maxAmmo.text= data.GetComponent<DataScript>().GeschossLevel.ToString();
 	}
 
 	// Update is called once per frame
 	void Update () {
-
+		coins.text = data.GetComponent<DataScript>().Coins.ToString();
+		maxHealth.text = data.GetComponent<DataScript>().Max_HpLevel.ToString();
+		maxTorpedo.text= data.GetComponent<DataScript>().TorpedosLevel.ToString();
+		maxAmmo.text= data.GetComponent<DataScript>().GeschossLevel.ToString();
 	}
 }

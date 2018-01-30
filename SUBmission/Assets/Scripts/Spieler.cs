@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 public class Spieler : MonoBehaviour {
 
 
-	public float Max_Hp = 1;
-	public float Current_Hp = 0f;
+	public float Max_Hp = 100f;
+	public float Current_Hp;
 	public int Coins = 0;
 	public float Geschoss_Dmg=10f;
 	public float Torpedo_Dmg = 20f;
@@ -22,7 +22,7 @@ public class Spieler : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         pullData();
-        Current_Hp = Max_Hp;
+		Current_Hp = 100f;
 	}
 	float eingabeFaktor = 8;
 	public GameObject[] projectil;
@@ -33,7 +33,12 @@ public class Spieler : MonoBehaviour {
 
 		MaxTorpedos = 5 + GameObject.Find(".GetComponent<DataScript>().TorpedosLevel;
 		MaxGeschossCount = 3 + data.GetComponent<DataScript>().GeschossLevel;
+<<<<<<< HEAD
 		Max_Hp = 100 + (10 * data.GetComponent<DataScript>().Max_HpLevel);
+=======
+		Coins = data.GetComponent<DataScript>().Coins;
+		Max_Hp = 100f + (10 * data.GetComponent<DataScript>().Max_HpLevel);
+>>>>>>> 2afc62753789bb726122a25c82701504700b4d1b
 
 
 		movment();
