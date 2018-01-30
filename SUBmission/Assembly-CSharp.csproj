@@ -67,7 +67,6 @@
      <Compile Include="Assets\Scripts\HealthBar.cs" />
      <Compile Include="Assets\Scripts\JellyFish.cs" />
      <Compile Include="Assets\Scripts\LoadSceneOnClick.cs" />
-     <Compile Include="Assets\Scripts\PauseScript.cs" />
      <Compile Include="Assets\Scripts\Pickup.cs" />
      <Compile Include="Assets\Scripts\PlayerWeapons.cs" />
      <Compile Include="Assets\Scripts\PointSystem.cs" />
