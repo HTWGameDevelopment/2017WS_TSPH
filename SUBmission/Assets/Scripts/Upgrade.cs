@@ -17,8 +17,20 @@ public class UpGreate : MonoBehaviour {
     public bool CloseLeftBorder;
 	// Use this for initialization
 	void Start () {
-		
-	}
+    Geschoss_Dmg;
+    Geschoss_Count;
+    Geschoss_Speed;
+    Torpedo_Reserve;
+    Torpedo_Dmg;
+    Torpedo_Regeneration;
+    Torpedo_Dot;
+    Torpedo_Tickrate;
+    Hp_Max;
+    Hp_Regeneration;
+    Player_Speed;
+    CloseLeftBorder;
+
+}
 	
 	// Update is called once per frame
 	void Update () {

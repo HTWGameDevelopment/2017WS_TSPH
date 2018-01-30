@@ -246,6 +246,7 @@
     <Compile Include="Assets\Scripts\Shark.cs" />
     <Compile Include="Assets\Scripts\Spawner.cs" />
     <Compile Include="Assets\Scripts\Spieler.cs" />
+    <Compile Include="Assets\Scripts\StatValues.cs" />
     <Compile Include="Assets\Scripts\Torpedo.cs" />
     <Compile Include="Assets\Scripts\Turret.cs" />
     <Compile Include="Assets\Scripts\TurretBullet.cs" />
