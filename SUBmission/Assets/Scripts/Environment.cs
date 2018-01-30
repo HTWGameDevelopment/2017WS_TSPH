@@ -12,7 +12,15 @@ public class Environment : MonoBehaviour {
         if (this.gameObject.transform.position.x+25.62f+15f<=GameObject.Find("Main Camera").GetComponent<Transform>().position.x)
         {
             GameObject.Find("Environment").GetComponent<BackrSpawner>().activeBox--;
+            if (GameObject.Find("Environment").GetComponent<BackrSpawner>().bossRoom)
+            {
+                iniBossFight();
+            }
             Destroy(this.gameObject);
         }
+    }
+    public void iniBossFight()
+    {
+        GameObject.Find("Main Camera").GetComponent<CameraController>().boss = true;
     }
 }

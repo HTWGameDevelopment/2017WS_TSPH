@@ -10,8 +10,8 @@ public class PauseScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         paused = false;
-		
-	}
+        resumeButton.onClick.AddListener(resumeButton_Click);
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -28,7 +28,7 @@ public class PauseScript : MonoBehaviour {
                 paused = false;
             }
         }
-		resumeButton.onClick.AddListener (resumeButton_Click);
+		
 
         pause(paused);
 		

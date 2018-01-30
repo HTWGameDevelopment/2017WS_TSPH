@@ -9,7 +9,7 @@ public class JellyFish : Enemy {
     void Start()
     {
         Max_Hp = 20f;
-        Collision_Dmg = 50f;
+        Collision_Dmg = 40f;
         Current_Hp = Max_Hp;
         movmentCounter = 0;
         speed = 0.01f;

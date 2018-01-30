@@ -36,20 +36,20 @@ public class EneSpawner : Spawner
         }
         else if(SceneManager.GetActiveScene().name == "Cave")
         {
-            MaxJelly = 2;
-            MaxShark = 3;
-            MaxDiver = 2;
+            MaxJelly = 1;
+            MaxShark = 2;
+            MaxDiver = 1;
             jellyWarsch = 20f * (1 - (JellyCounter) / (MaxJelly));
-            sharkWarsch = 60f * (1 - (SharkCounter) / (MaxShark));
-            diverWarsch = 40f * (1 - (DiverCounter) / (MaxDiver));
+            sharkWarsch = 40f * (1 - (SharkCounter) / (MaxShark));
+            diverWarsch = 20f * (1 - (DiverCounter) / (MaxDiver));
         }
         else if (SceneManager.GetActiveScene().name == "Indoor")
         {
             MaxJelly = 1;
-            MaxShark = 2;
-            MaxDiver = 4;
+            MaxShark = 1;
+            MaxDiver = 3;
             jellyWarsch = 5f * (1 - (JellyCounter) / (MaxJelly));
-            sharkWarsch = 30f * (1 - (SharkCounter) / (MaxShark));
+            sharkWarsch = 20f * (1 - (SharkCounter) / (MaxShark));
             diverWarsch = 80f * (1 - (DiverCounter) / (MaxDiver));
         }
         for (int i = 0; i < spawnable.Length; i++)

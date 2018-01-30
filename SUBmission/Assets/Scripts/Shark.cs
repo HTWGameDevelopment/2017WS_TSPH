@@ -9,7 +9,7 @@ public class Shark : Enemy
     void Start()
     {
         Max_Hp = 100f;
-        Collision_Dmg = 100f;
+        Collision_Dmg = 60f;
         Current_Hp = Max_Hp;
     }
     public override void movment()

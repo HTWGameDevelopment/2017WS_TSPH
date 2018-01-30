@@ -26,16 +26,16 @@ public class DataScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         DontDestroyOnLoad(gameObject);
+        upgradeAmmoButton.onClick.AddListener(upgradeAmmoButton_Click);
+        upgradeHealthButton.onClick.AddListener(upgradeHealthButton_Click);
+        upgradeTorpedoButton.onClick.AddListener(upgradeTorpedoButton_Click);
 
     }
 
 	// Update is called once per frame
 	void Update () {
-		upgradeAmmoButton.onClick.AddListener (upgradeAmmoButton_Click);
-		upgradeHealthButton.onClick.AddListener (upgradeHealthButton_Click);
-		upgradeTorpedoButton.onClick.AddListener (upgradeTorpedoButton_Click);
 	}
-
+    
 	public void  upgradeHealthButton_Click(){
 		Max_HpLevel ++;
 	}

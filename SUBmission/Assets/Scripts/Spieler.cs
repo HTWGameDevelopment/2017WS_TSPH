@@ -18,8 +18,7 @@ public class Spieler : MonoBehaviour {
 	public int MaxGeschossCount = 1;
 	public int GeschossCount = 0;
 	public int Torpedos = 0;
-	public int MaxTorpedos = 1;
-	public GameObject data;
+	public int MaxTorpedos = 3;
 	// Use this for initialization
 	void Start () {
         pullData();
@@ -32,10 +31,9 @@ public class Spieler : MonoBehaviour {
 	//  Update is called once per frame
 	void Update () {
 
-		MaxTorpedos = 5 + data.GetComponent<DataScript>().TorpedosLevel;
-		MaxGeschossCount = 3 + data.GetComponent<DataScript>().GeschossLevel;
-		Coins = data.GetComponent<DataScript>().Coins;
-		Max_Hp = 100f + (10 * data.GetComponent<DataScript>().Max_HpLevel);
+		MaxTorpedos = 5 + GameObject.Find("Data").GetComponent<DataScript>().TorpedosLevel;
+		MaxGeschossCount = 3 + GameObject.Find("Data").GetComponent<DataScript>().GeschossLevel;
+		Max_Hp = 100f + (10 * GameObject.Find("Data").GetComponent<DataScript>().Max_HpLevel);
 
 
 		movment();
@@ -125,9 +123,12 @@ public class Spieler : MonoBehaviour {
 	}
 	void resetPlayer()
 	{
-
+        if ( !GameObject.Find("Main Camera").GetComponent<CameraController>().boss)
 		transform.position = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width / 4, Screen.height / 2, 0))+new Vector3(0,spawnheight());
-	}
+        else
+        transform.position =new Vector3 (this.transform.position.x,0);
+
+    }
 	void shoot()
 	{
 		if (Input.GetButtonDown("Fire1"))

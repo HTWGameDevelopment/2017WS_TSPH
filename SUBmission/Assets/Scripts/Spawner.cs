@@ -10,7 +10,10 @@ public class Spawner : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        spawner();
+        if (!GameObject.Find("Environment").GetComponent<BackrSpawner>().bossRoom)
+        {
+            spawner();
+        }
         minhight = spawnheight()[0];
         maxhight = spawnheight()[1];
 
