@@ -1,5 +1,5 @@
 WindowsStandalone
-ba5729fa367315e7a7b45a6f8d4d055c Assembly-CSharp.dll:.PauseScript
+c14450c3c757e6ee6cac50581a3ae27d Assembly-CSharp.dll:.PauseScript
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Geschoss
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.PlayerWeapons
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
@@ -17,7 +17,7 @@ af723155c251fcfa0e66530a75f3ea4c UnityEngine.Timeline.dll:UnityEngine.Timeline.T
 bde308bdc8e320f5e22720c4359438ce Assembly-CSharp.dll:.Torpedo
 1e085856807b6249e1430b18aa80c8ba Assembly-CSharp.dll:.Shark
 8116dd34a0e0385f66c2bbed46ba001b Assembly-CSharp.dll:.Enemy
-7564d82f6a2bfa5b9ed53c77650da71c Assembly-CSharp.dll:.CameraController
+2c2ecfacec04fa22b799be31b3841514 Assembly-CSharp.dll:.CameraController
 a35dc9cca2faebc5f5f1aeb9e8e47bbe UnityEngine.UI.dll:UnityEngine.UI.AspectRatioFitter
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.UI.dll:UnityEngine.EventSystems.BaseInput
 49cd62a578efc0a599b810a2b66cd49c UnityEngine.UI.dll:UnityEngine.UI.Button
@@ -121,8 +121,11 @@ bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.Audi
 c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingCollider
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingRenderer
 a0dfbe760e0f63319d17681a7b793a98 Assembly-CSharp.dll:.ConSpawner
+177ee7ef115aa2812807614da44272cb Assembly-CSharp.dll:.DataScript
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.QuitOnClick
-44cee9ac6c4c6d8476c81870ab7c31cb Assembly-CSharp.dll:.DoorButton
+0bad0de5f173b0289bcf48eca5877c0d Assembly-CSharp.dll:.Boss
+b5b3c71e960a4e4bea0599db8528fd7d Assembly-CSharp.dll:.CharacterMenu
+8076a939e6b1be03e909bea3adca00b5 Assembly-CSharp.dll:.DoorButton
 a076d45309a05019985a016106b78963 Assembly-CSharp.dll:.Spieler
 32e8fe00b63ed946490b898f6024a2f2 Facebook.Unity.Settings.dll:Facebook.Unity.Settings.FacebookSettings
 fc1e0f4d8439d9928083474691511a13 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
@@ -157,7 +160,8 @@ ec8ac4dcd4a36f2f942772a53189af8e Assembly-CSharp.dll:.Diver
 d648e42e5770252c4760b0586ad460ee Assembly-CSharp.dll:.Spawner
 12569088abc007e3557587b771e26de1 Assembly-CSharp.dll:.Explosion
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.GeschossZähler
-3022e854560d6f09eafce4509f06089e Assembly-CSharp.dll:.BackrSpawner
+d53575ac28d64bb9265946029f361adb Assembly-CSharp.dll:.BackrSpawner
 b6be3b97e2bb6ef143e24eaed6a74819 Assembly-CSharp.dll:.Turret
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.LoadSceneOnClick
+deff682a5d9a1ef7571a0bb7427d4c3d Assembly-CSharp.dll:.StatValues
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Pickup

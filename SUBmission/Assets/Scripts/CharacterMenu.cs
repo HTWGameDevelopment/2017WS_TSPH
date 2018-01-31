@@ -10,12 +10,16 @@ public class CharacterMenu : MonoBehaviour {
 	public Text maxHealth;
 	public Text maxTorpedo;
 	public Text maxAmmo;
-	public GameObject data;
+    public Text HpCost;
+    public Text TorpedoCost;
+    public Text AmmoCost;
+	GameObject data;
 
 
 	// Use this for initialization
 	void Start () {
-		coins.text = data.GetComponent<DataScript>().Coins.ToString();
+        data = GameObject.Find("Data");
+		coins.text = GameObject.Find("Spieler").GetComponent<Spieler>().Coins.ToString();
 		maxHealth.text = data.GetComponent<DataScript>().Max_HpLevel.ToString();
 		maxTorpedo.text= data.GetComponent<DataScript>().TorpedosLevel.ToString();
 		maxAmmo.text= data.GetComponent<DataScript>().GeschossLevel.ToString();
@@ -23,9 +27,12 @@ public class CharacterMenu : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		coins.text = data.GetComponent<DataScript>().Coins.ToString();
-		maxHealth.text = data.GetComponent<DataScript>().Max_HpLevel.ToString();
+        coins.text = GameObject.Find("Spieler").GetComponent<Spieler>().Coins.ToString();
+        maxHealth.text = data.GetComponent<DataScript>().Max_HpLevel.ToString();
 		maxTorpedo.text= data.GetComponent<DataScript>().TorpedosLevel.ToString();
 		maxAmmo.text= data.GetComponent<DataScript>().GeschossLevel.ToString();
-	}
+        HpCost.text = data.GetComponent<DataScript>().costHealth.ToString()+("$");
+        TorpedoCost.text = data.GetComponent<DataScript>().costTorpedo.ToString() + ("$");
+        AmmoCost.text = data.GetComponent<DataScript>().costAmmo.ToString() + ("$");
+    }
 }
