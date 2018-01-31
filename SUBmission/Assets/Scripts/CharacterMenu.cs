@@ -27,10 +27,10 @@ public class CharacterMenu : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-        coins.text = GameObject.Find("Spieler").GetComponent<Spieler>().Coins.ToString();
-        maxHealth.text = data.GetComponent<DataScript>().Max_HpLevel.ToString();
-		maxTorpedo.text= data.GetComponent<DataScript>().TorpedosLevel.ToString();
-		maxAmmo.text= data.GetComponent<DataScript>().GeschossLevel.ToString();
+        coins.text = GameObject.Find("Spieler").GetComponent<Spieler>().Coins.ToString()+("$");
+        maxHealth.text =("Lvl:") + data.GetComponent<DataScript>().Max_HpLevel.ToString();
+		maxTorpedo.text= ("Lvl:") + data.GetComponent<DataScript>().TorpedosLevel.ToString();
+		maxAmmo.text= ("Lvl:") + data.GetComponent<DataScript>().GeschossLevel.ToString();
         HpCost.text = data.GetComponent<DataScript>().costHealth.ToString()+("$");
         TorpedoCost.text = data.GetComponent<DataScript>().costTorpedo.ToString() + ("$");
         AmmoCost.text = data.GetComponent<DataScript>().costAmmo.ToString() + ("$");
