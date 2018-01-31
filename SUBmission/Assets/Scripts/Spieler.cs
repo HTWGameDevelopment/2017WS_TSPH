@@ -22,22 +22,24 @@ public class Spieler : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         pullData();
-		Current_Hp = 100f;
-	}
+        Max_Hp = MaxHP();
+        Current_Hp = Max_Hp;
+       
+    }
 	float eingabeFaktor = 8;
 	public GameObject[] projectil;
 
 
 	//  Update is called once per frame
 	void Update () {
-        death();
+       death();
 
         MaxTorpedos = 5 + GameObject.Find("Data").GetComponent<DataScript>().TorpedosLevel;
 		MaxGeschossCount = 3 + GameObject.Find("Data").GetComponent<DataScript>().GeschossLevel;
-		Max_Hp = 100f + (10 * GameObject.Find("Data").GetComponent<DataScript>().Max_HpLevel);
+        Max_Hp = MaxHP();
 
 
-		movment();
+        movment();
 		shoot();
 	}
     void death()
@@ -195,5 +197,14 @@ public class Spieler : MonoBehaviour {
     {
 
             Coins = GameObject.Find("Data").GetComponent<DataScript>().Coins;
+    }
+    public float MaxHP()
+    {
+        float maxhp=100f;
+        for (int i=0; i< GameObject.Find("Data").GetComponent<DataScript>().Max_HpLevel;i++)
+        {
+            maxhp *= 1.1f;
+        }
+        return maxhp;
     }
 }
