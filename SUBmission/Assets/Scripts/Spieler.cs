@@ -30,8 +30,9 @@ public class Spieler : MonoBehaviour {
 
 	//  Update is called once per frame
 	void Update () {
+        death();
 
-		MaxTorpedos = 5 + GameObject.Find("Data").GetComponent<DataScript>().TorpedosLevel;
+        MaxTorpedos = 5 + GameObject.Find("Data").GetComponent<DataScript>().TorpedosLevel;
 		MaxGeschossCount = 3 + GameObject.Find("Data").GetComponent<DataScript>().GeschossLevel;
 		Max_Hp = 100f + (10 * GameObject.Find("Data").GetComponent<DataScript>().Max_HpLevel);
 
@@ -39,6 +40,14 @@ public class Spieler : MonoBehaviour {
 		movment();
 		shoot();
 	}
+    void death()
+    {
+        if (Current_Hp<=0)
+        {
+            Destroy(GameObject.Find("Data"));
+            SceneManager.LoadScene("GameOver");
+        }
+    }
 	void movment()
 	{
 		//Eingabe speichern
