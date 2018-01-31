@@ -58,4 +58,42 @@ public class Diver : Enemy
         }
     }
 
+	public override void OnTriggerEnter2D(Collider2D co)
+	{
+		if (co.gameObject.tag == "Player")
+		{
+			GameObject.Find("Spieler").GetComponent<Spieler>().Current_Hp -= Collision_Dmg;
+			GameObject.Find("Dmg").GetComponent<PointSystem>().dmgrecived += Collision_Dmg;
+			if (GameObject.Find("Spieler").GetComponent<Spieler>().Current_Hp < 0)
+			{
+				GameObject.Find("Dmg").GetComponent<PointSystem>().deaths++;
+				GameObject.Find("Spieler").GetComponent<Spieler>().Current_Hp = 0; }
+			Current_Hp = Max_Hp;
+			destroy();
+		}
+		else if (co.gameObject.tag == "Geschoss")
+		{
+			if (co.gameObject.name == "Geschoss(Clone)")
+			{
+				Current_Hp -= GameObject.Find("Spieler").GetComponent<Spieler>().Geschoss_Dmg;
+				if (Current_Hp <= 0)
+				{
+					GameObject.Find ("Spieler").GetComponent<Spieler> ().Coins+=2;
+					Current_Hp = Max_Hp;
+					destroy();
+				}
+			}
+
+			else if (co.gameObject.name == "Torpedo(Clone)" || co.gameObject.name == "Exlposion(Clone)")
+			{
+				Current_Hp -= GameObject.Find("Spieler").GetComponent<Spieler>().Torpedo_Dmg;
+				if (Current_Hp <= 0)
+				{
+					Current_Hp = Max_Hp;
+					destroy();
+				}
+			}
+		}
+	}
+
 }
