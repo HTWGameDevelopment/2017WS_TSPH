@@ -121,10 +121,10 @@ bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.Audi
 c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingCollider
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingRenderer
 a0dfbe760e0f63319d17681a7b793a98 Assembly-CSharp.dll:.ConSpawner
-177ee7ef115aa2812807614da44272cb Assembly-CSharp.dll:.DataScript
+2bfcaeb8424e532b3e1455fc454e5b7d Assembly-CSharp.dll:.DataScript
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.QuitOnClick
 0bad0de5f173b0289bcf48eca5877c0d Assembly-CSharp.dll:.Boss
-b5b3c71e960a4e4bea0599db8528fd7d Assembly-CSharp.dll:.CharacterMenu
+afe158d07505940c8ab597641cab7582 Assembly-CSharp.dll:.CharacterMenu
 8076a939e6b1be03e909bea3adca00b5 Assembly-CSharp.dll:.DoorButton
 a076d45309a05019985a016106b78963 Assembly-CSharp.dll:.Spieler
 32e8fe00b63ed946490b898f6024a2f2 Facebook.Unity.Settings.dll:Facebook.Unity.Settings.FacebookSettings
